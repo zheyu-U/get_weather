@@ -4,6 +4,13 @@ import time
 
 import requests
 
+t = time.time()
+millisecond = int(t*1000)
+
+fl = open('log.log','a',encoding='utf-8')
+fl.write("[INFO]" + str(t) + ":Step one:Start!\n")
+fl.close()
+
 cookies = {
     'f_city': '%E6%88%90%E9%83%BD%7C101270101%7C',
     'Hm_lvt_080dabacb001ad3dc8b9b9049b36d43b': '1688458910,1688607038,1688622651,1689213844',
@@ -18,7 +25,6 @@ headers = {
     'Referer': 'http://www.weather.com.cn/',
     'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Mobile Safari/537.36',
 }
-
 
 t = time.time()
 millisecond = int(t*1000)
@@ -42,6 +48,14 @@ weather_found = source_Loaded.select('.tem')
 fl = open('weather.log.txt','w',encoding='gbk')
 fl.write(source)
 fl.close()
+
+t = time.time()
+millisecond = int(t*1000)
+
+fl = open('log.log','a',encoding='utf-8')
+fl.write("[INFO]" + str(t) + ":Step one:Done!\n")
+fl.close()
+print("Step one:Done!")
 #fl = open('weather_found.log.txt','w',encoding='utf-8')
 #fl.write(str(weather_found).replace('<p class="tem">','').replace('<p class="tem">','').replace('<span>','').replace('</span><em>°C</em>','').replace('</span><em>°C</em>','').replace('<div class="tem">','').replace('[','').strip().replace(']','').replace('</p>, ','').replace('</p>, ','').replace('</div>',''))
 #fl.close()

@@ -13,8 +13,8 @@ weather wea;
 bool is_stringC(string a,int q);
 int main()
 {
-    system("weather_M.py");
-    system("weather.py");
+    system("python weather_M.py");
+    system("python weather.py");
     ifstream fin;
     fin.open("weathersource.log.txt",ios::in);
     if(fin.is_open() == false){
@@ -163,7 +163,7 @@ int main()
 /* ^^^^^ Warning Part ^^^^^*/
 
     
-
+    cout<<"Step three:Done!\n";
 	cout<<"现在天气:"<<wea.weather<<endl;
     cout<<"现在气温:"<<wea.Ctem<<"℃    更新时间:"<<wea.UPtime<<endl;
     cout<<"风向:"<<wea.wind_direction<<"  风速:"<<wea.wind_speed<<endl;
